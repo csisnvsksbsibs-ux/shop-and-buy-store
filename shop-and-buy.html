@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b33">
+<title>Shop and Buy - متجر التسوق والشراء</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--navy:#101b33;--blue:#2768d9;--sky:#65c8ff;--ink:#17243b;--muted:#75839a;--paper:#f5f8fc;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Cairo,Arial,sans-serif}
+a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e6edf6;position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1px;color:#142744}.mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#65d4ff,#2869dc);display:grid;place-items:center;color:#fff;font-size:25px;box-shadow:0 7px 18px #3d91db55}.brand small{display:block;font-size:10px;color:#8492a8;letter-spacing:0;font-weight:500}
+nav{display:flex;gap:27px;font-size:12px;color:#68778d}nav a:hover{color:#2369d9}.tools{display:flex;gap:8px}.tools button{border:0;border-radius:10px;padding:10px 13px;background:#edf4ff;color:#1c5dbb;font-weight:700}.tools .cart{background:#2469d9;color:white}
+.hero{margin:24px auto 0;width:88%;min-height:450px;border-radius:25px;background:linear-gradient(115deg,#101b33 0%,#153d70 60%,#1d6bb1 100%);color:white;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:55px 7%;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid #ffffff20;border-radius:50%;left:-90px;top:-130px;box-shadow:0 0 0 45px #ffffff08,0 0 0 95px #ffffff05}
+.kicker{color:#9fe2ff;font-size:12px;font-weight:800}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.3;margin:17px 0}.hero h1 span{color:#80dcff}.hero p{color:#d0e0f2;font-size:14px;line-height:2;max-width:470px}.cta{display:inline-flex;gap:25px;align-items:center;background:#fff;color:#1554a2;border-radius:11px;padding:13px 20px;margin-top:15px;font-weight:800;font-size:12px}
+.hero-visual{height:300px;display:grid;place-items:center;position:relative;z-index:1}.circle{position:absolute;width:265px;height:265px;border-radius:50%;background:radial-gradient(circle,#6dd9ff,#327fd8 60%,#22529c);opacity:.9;box-shadow:0 0 80px #62caff55}.showcase{width:215px;height:250px;position:relative;border-radius:20px;background:linear-gradient(145deg,#ffffff38,#ffffff0b);border:1px solid #ffffff66;backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 25px 55px #07162b77;transform:rotate(5deg)}.showcase .bag{font-size:90px}.showcase b{font-size:18px;letter-spacing:2px}.showcase small{color:#d3edff}
+section.content{width:88%;margin:55px auto}.heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}.heading small{color:#2c79cb;font-weight:800}.heading h2{margin:4px 0;font-size:27px}.heading p{margin:0;color:var(--muted);font-size:11px}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.cat{border:1px solid #e0e9f4;background:white;border-radius:16px;padding:20px 14px;text-align:right;box-shadow:0 8px 25px #1c3e6810;transition:.2s}.cat:hover{transform:translateY(-4px);border-color:#6ab8f0}.cat .emoji{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#edf6ff;font-size:25px;margin-bottom:14px}.cat b{display:block;font-size:14px}.cat small{color:#8794a8;font-size:10px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.product{background:white;border:1px solid #e4ebf3;border-radius:16px;overflow:hidden;box-shadow:0 9px 28px #1a365510}.visual{height:150px;display:grid;place-items:center;font-size:65px;position:relative}.v1{background:linear-gradient(135deg,#d9eaff,#a9c8ee)}.v2{background:linear-gradient(135deg,#e7dcff,#c2b1f0)}.v3{background:linear-gradient(135deg,#d8f6f5,#a6dcdf)}.v4{background:linear-gradient(135deg,#ffe6d2,#f4c19b)}.v5{background:linear-gradient(135deg,#e2edfa,#b5cbe4)}.visual span{position:absolute;top:10px;right:10px;background:#ffffffd9;border-radius:20px;padding:4px 9px;font-size:9px;color:#365575}
+.info{padding:13px}.info small{color:#2676c9;font-size:10px}.info h3{font-size:13px;margin:5px 0 14px}.buyrow{display:flex;align-items:center;justify-content:space-between}.buyrow b{font-size:13px}.add{width:31px;height:31px;border:0;border-radius:9px;background:#236bd6;color:white;font-size:20px}
+.promo{width:88%;margin:60px auto;padding:30px 35px;background:#e5f2ff;border:1px solid #d0e6fb;border-radius:18px;display:flex;justify-content:space-between;align-items:center}.promo h2{margin:5px 0;font-size:23px}.promo p{color:#647a95;font-size:12px;margin:0}.promo strong{font-size:45px;color:#398bd7}
+footer{padding:25px 7%;background:#101b33;color:#dce8f8;display:flex;justify-content:space-between;align-items:center;font-size:10px}footer small{color:#a1b3ca}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#102d55;color:white;padding:12px 20px;border-radius:10px;opacity:0;transition:.2s;z-index:9;font-size:12px}.toast.show{opacity:1;transform:translate(-50%,0)}
+body.dark{--paper:#0c1424;--ink:#edf5ff;background:#0c1424;color:#edf5ff}body.dark header,body.dark .cat,body.dark .product{background:#152238;color:#edf5ff;border-color:#263c5a}body.dark nav{color:#b4c5dc}body.dark .cat small,body.dark .heading p{color:#9eb0c8}body.dark .promo{background:#172d49;border-color:#294b70}body.dark .promo p{color:#b2c7df}
+@media(max-width:850px){nav{gap:12px}.hero{padding:40px 5%;width:92%}.content,.promo{width:92%}.products{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){header{height:67px;padding:0 4%}.brand{font-size:11px}.mark{width:35px;height:35px}nav{display:none}.tools button{padding:8px 10px;font-size:10px}.hero{width:92%;margin-top:12px;grid-template-columns:1fr;padding:30px 7% 20px;text-align:center}.hero-visual{grid-row:1;height:210px}.circle{width:175px;height:175px}.showcase{width:145px;height:175px}.showcase .bag{font-size:58px}.showcase b{font-size:13px}.hero h1{font-size:39px;margin:10px 0}.hero p{font-size:12px}.content{width:92%;margin:42px auto!important}.heading{display:block}.heading h2{font-size:23px}.heading p{margin-top:5px}.cats{grid-template-columns:repeat(2,1fr);gap:9px}.cat{padding:14px}.cat:last-child{grid-column:span 2}.cat .emoji{width:40px;height:40px;margin-bottom:8px}.products{grid-template-columns:repeat(2,1fr);gap:10px}.visual{height:125px}.info{padding:10px}.info h3{font-size:11px}.promo{width:92%;padding:20px;margin:40px auto}.promo h2{font-size:18px}.promo strong{font-size:32px}footer{padding:20px 5%;gap:8px;flex-wrap:wrap}footer p{width:100%;order:3;margin:0}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="#"><span class="mark">S</span><span>SHOP AND BUY<small>متجر التسوق والشراء</small></span></a>
+<nav><a href="#home">الرئيسية</a><a href="#categories">الأقسام</a><a href="#products">المنتجات</a><a href="#about">عن المتجر</a></nav>
+<div class="tools"><button id="theme">◐</button><button class="cart" id="cart">السلة <span id="count">0</span></button></div>
+</header>
+<section class="hero" id="home">
+<div><span class="kicker">✦ أهلاً بك في عالم التسوق</span><h1>تسوّق أسهل،<br><span>واختر الأفضل.</span></h1><p>اكتشف مجموعة متنوعة من المنتجات والخدمات الرقمية والطعام والكتب، واجعل كل ما تحتاجه أقرب إليك.</p><a class="cta" href="#categories">اكتشف أقسام المتجر <b>←</b></a></div>
+<div class="hero-visual"><div class="circle"></div><div class="showcase"><span class="bag">🛍️</span><b>SHOP & BUY</b><small>اختياراتك في مكان واحد</small></div></div>
+</section>
+<section class="content" id="categories"><div class="heading"><div><small>تصفّح بسهولة</small><h2>ماذا تريد أن تكتشف؟</h2></div><p>خمسة أقسام لتبدأ منها رحلتك</p></div>
+<div class="cats">
+<button class="cat" data-filter="products"><span class="emoji">🧥</span><b>المنتجات</b><small>اختيارات يومية متنوعة</small></button>
+<button class="cat" data-filter="games"><span class="emoji">🎮</span><b>شحن الألعاب</b><small>بطاقات وخدمات رقمية</small></button>
+<button class="cat" data-filter="credit"><span class="emoji">📱</span><b>شحن الرصيد</b><small>ابقَ على اتصال</small></button>
+<button class="cat" data-filter="food"><span class="emoji">🍔</span><b>الطعام</b><small>وجبات ونكهات لذيذة</small></button>
+<button class="cat" data-filter="books"><span class="emoji">📚</span><b>الكتب</b><small>اقرأ واكتشف أفكاراً جديدة</small></button>
+</div></section>
+<section class="content" id="products"><div class="heading"><div><small>مختارات المتجر</small><h2>منتجات وخدمات مميزة</h2></div><p>نماذج تجريبية للعرض</p></div>
+<div class="products">
+<article class="product" data-category="products"><div class="visual v1">🧥<span>منتجات</span></div><div class="info"><small>المنتجات</small><h3>جاكيت شتوي أنيق</h3><div class="buyrow"><b>35.00 $</b><button class="add" data-name="جاكيت شتوي أنيق">+</button></div></div></article>
+<article class="product" data-category="games"><div class="visual v2">🎮<span>رقمي</span></div><div class="info"><small>شحن الألعاب</small><h3>بطاقة شحن ألعاب</h3><div class="buyrow"><b>10.00 $</b><button class="add" data-name="بطاقة شحن ألعاب">+</button></div></div></article>
+<article class="product" data-category="credit"><div class="visual v3">📲<span>خدمة</span></div><div class="info"><small>شحن الرصيد</small><h3>شحن رصيد الهاتف</h3><div class="buyrow"><b>5.00 $</b><button class="add" data-name="شحن رصيد الهاتف">+</button></div></div></article>
+<article class="product" data-category="food"><div class="visual v4">🍔<span>الطعام</span></div><div class="info"><small>الطعام</small><h3>وجبة برغر مميزة</h3><div class="buyrow"><b>8.00 $</b><button class="add" data-name="وجبة برغر مميزة">+</button></div></div></article>
+<article class="product" data-category="books"><div class="visual v5">📖<span>كتب</span></div><div class="info"><small>الكتب</small><h3>كتاب تطوير الذات</h3><div class="buyrow"><b>6.00 $</b><button class="add" data-name="كتاب تطوير الذات">+</button></div></div></article>
+</div></section>
+<section class="promo" id="about"><div><small>SHOP AND BUY</small><h2>كل ما تحبه، أقرب إليك.</h2><p>متجر واحد، وأقسام متعددة، وتجربة تسوق بسيطة.</p></div><strong>✦</strong></section>
+<footer><a class="brand" href="#"><span class="mark">S</span><span>SHOP AND BUY<small>متجر التسوق والشراء</small></span></a><p>© 2026 جميع الحقوق محفوظة</p><small>نسخة تجريبية للعرض</small></footer>
+<div class="toast" id="toast"></div>
+<script>
+let n=0;const toast=document.getElementById('toast');function msg(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2100)}
+document.querySelectorAll('.add').forEach(b=>b.onclick=()=>{n++;document.getElementById('count').textContent=n;msg('تمت إضافة '+b.dataset.name+' إلى السلة التجريبية')});
+document.getElementById('cart').onclick=()=>msg(n?'عدد المنتجات في السلة: '+n+' (عرض تجريبي)':'السلة فارغة حالياً');
+document.getElementById('theme').onclick=()=>document.body.classList.toggle('dark');
+document.querySelectorAll('.cat').forEach(b=>b.onclick=()=>{document.querySelectorAll('.product').forEach(p=>p.hidden=p.dataset.category!==b.dataset.filter);document.getElementById('products').scrollIntoView({behavior:'smooth'})});
+</script>
+</body></html>
